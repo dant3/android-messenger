@@ -16,6 +16,7 @@
 		2A1F72AA2B0000010000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A1F72AA2B0000010000005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A1F72AA2B0000010000006 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4208302F6B269300F87147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +33,7 @@
 		2A1F72AA2B0000010000020 = {
 			isa = PBXGroup;
 			children = (
+				6F4208302F6B269300F87147 /* Assets.xcassets */,
 				2A1F72AA2B0000010000021 /* iosApp */,
 				2A1F72AA2B0000010000022 /* Products */,
 			);

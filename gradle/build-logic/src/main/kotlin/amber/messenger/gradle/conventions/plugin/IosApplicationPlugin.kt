@@ -10,7 +10,6 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile
 
 class IosApplicationPlugin : Plugin<Project> {
@@ -25,7 +24,6 @@ class IosApplicationPlugin : Plugin<Project> {
 
         extensions.configure<KotlinMultiplatformExtension> {
             listOf(
-                iosX64(),
                 iosArm64(),
                 iosSimulatorArm64(),
             ).forEach { target ->
