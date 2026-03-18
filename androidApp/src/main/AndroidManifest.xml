@@ -82,13 +82,10 @@
         android:allowBackup="${allowBackupValue}"
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:enableOnBackInvokedCallback="true"
-        android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="UnusedAttribute">
         <profileable android:shell="${profileable}"/>
-
 
 
         <activity-alias
