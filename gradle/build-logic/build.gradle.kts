@@ -52,4 +52,10 @@ gradlePlugin {
             implementationClass = "amber.messenger.gradle.conventions.plugin.DesktopApplicationPlugin"
         }
     }
+    plugins {
+        register("iosApplication") {
+            id = "amber.messenger.ios.application"
+            implementationClass = "amber.messenger.gradle.conventions.plugin.IosApplicationPlugin"
+        }
+    }
 }

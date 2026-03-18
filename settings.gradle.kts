@@ -47,5 +47,6 @@ rootProject.name = "Amber"
 
 include(":androidApp")
 include(":desktopApp")
+include(":iosApp")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
