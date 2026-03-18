@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="ContentDescription" severity="ignore"/>
+    <issue id="CannotEnableHidden" severity="ignore"/>
+    <issue id="VectorPath" severity="ignore"/>
+
+    <issue id="GradleDependency" severity="informational"/>
+
+    <issue id="MinSdkTooLow" severity="warning"/>
+    <issue id="IconExpectedSize" severity="warning"/>
+    <issue id="AndroidGradlePluginVersion" severity="warning"/>
+    <issue id="UnusedResources" severity="warning"/>
+    <issue id="Untranslatable" severity="warning"/>
+    <issue id="DataExtractionRules" severity="warning"/>
+    <issue id="WakelockTimeout" severity="warning"/>
+
+    <issue id="ObsoleteSdkInt" severity="error"/>
+    <issue id="SoonBlockedPrivateApi" severity="error"/>
+    <issue id="RestrictedApi" severity="error"/>
+    <issue id="OldTargetApi" severity="error"/>
+    <issue id="NewApi" severity="error"/>
+    <issue id="InlinedApi" severity="error"/>
+
+    <issue id="ValidActionsXml" severity="error"/>
+    <issue id="AppCompatMethod" severity="error"/>
+    <issue id="DuplicateStrings" severity="error"/>
+    <issue id="TypographyQuotes" severity="error"/>
+    <issue id="DefaultEncoding" severity="error"/>
+    <issue id="PermissionNamingConvention" severity="error"/>
+    <issue id="StringFormatTrivial" severity="error"/>
+    <issue id="IconMissingDensityFolder" severity="error"/>
+    <issue id="IconLocation" severity="error"/>
+
+    <!-- Compose checks -->
+    <issue id="ComposeNamingUppercase" severity="warning">
+        <ignore regexp=".*invoke" />
+    </issue>
+
+    <!-- warning due to false positives caused by not using compose-stability.conf -->
+    <issue id="ComposeUnstableReceiver" severity="warning"/>
+
+    <issue id="ComposeContentEmitterReturningValues" severity="error"/>
+    <issue id="ComposeMultipleContentEmitters" severity="error"/>
+    <issue id="ComposePreviewNaming" severity="warning"/>
+    <issue id="ComposeViewModelInjection" severity="warning"/>
+    <issue id="ComposePreviewPublic" severity="error"/>
+    <issue id="ComposeModifierMissing" severity="error">
+        <option name="visibility-threshold" value="only_public" />
+    </issue>
+    <issue id="ComposeModifierReused" severity="error"/>
+    <issue id="ComposeModifierWithoutDefault" severity="error"/>
+
+    <issue id="StringFormatCount" severity="fatal"/>
+    <issue id="Registered" severity="fatal"/>
+
+    <!-- lowered priority due to false-positives:
+         it reports usages of context.getString inside of effects where we obviously
+         can't call compose stringResource -->
+    <issue id="LocalContextGetResourceValueCall" severity="informational"/>
+    <!-- While correct in general, it beats some reuse patterns -->
+    <!-- TODO: consider making it an error later -->
+    <issue id="ComposeViewModelForwarding" severity="warning"/>
+</lint>
