@@ -13,6 +13,10 @@ kotlin {
     }
 }
 
+dependencies {
+    jvmMainImplementation(projects.modules.ui.uikit)
+}
+
 compose.desktop {
     application {
         mainClass = "amber.messenger.desktop.MainKt"

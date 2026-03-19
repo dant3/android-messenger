@@ -1,5 +1,6 @@
 package amber.messenger.desktop
 
+import amber.ui.uikit.TestScreen
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -44,16 +45,7 @@ fun main() {
             title = "Amber Messenger",
             icon = icon,
         ) {
-            MaterialTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
-                    Box(
-                        contentAlignment = Alignment.Center,
-                        modifier = Modifier.fillMaxSize(),
-                    ) {
-                        Text("Amber Messenger Desktop")
-                    }
-                }
-            }
+            TestScreen(modifier = Modifier.fillMaxSize())
         }
     }
 }

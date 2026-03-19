@@ -81,6 +81,7 @@
         android:name="amber.messenger.android.AmberApplicationInstance"
         android:allowBackup="${allowBackupValue}"
         android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:enableOnBackInvokedCallback="true"
@@ -101,7 +102,6 @@
 
         <activity
             android:name="amber.messenger.android.activity.AmberUiActivity"
-            android:theme="@style/YuChat.Splash"
             android:configChanges="colorMode|density|uiMode|orientation|fontScale|fontWeightAdjustment|screenLayout|screenSize|locale|layoutDirection"
             android:windowSoftInputMode="adjustResize"
             android:launchMode="singleTask"
@@ -128,12 +128,12 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_notification_icon" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/brandBase" />
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_icon"-->
+<!--            android:resource="@drawable/ic_notification_icon" />-->
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_color"-->
+<!--            android:resource="@color/brandBase" />-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="announcements" />

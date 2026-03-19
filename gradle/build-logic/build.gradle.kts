@@ -58,4 +58,10 @@ gradlePlugin {
             implementationClass = "amber.messenger.gradle.conventions.plugin.IosApplicationPlugin"
         }
     }
+    plugins {
+        register("composeLibrary") {
+            id = "amber.messenger.compose"
+            implementationClass = "amber.messenger.gradle.conventions.plugin.ComposeLibraryPlugin"
+        }
+    }
 }

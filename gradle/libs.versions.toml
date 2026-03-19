@@ -184,7 +184,8 @@ compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", v
 compose-foundation-layout = { module = "org.jetbrains.compose.foundation:foundation-layout", version.ref = "composeMultiplatformVersion" }
 compose-material = { module = "org.jetbrains.compose.material:material", version.ref = "composeMultiplatformVersion" }
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatformVersion" }
-compose-material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "composeMultiplatformVersion" }
+compose-material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version = "1.7.3" }
+compose-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatformVersion" }
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatformVersion" }
 compose-runtime-saveable = { module = "org.jetbrains.compose.runtime:runtime-saveable", version.ref = "composeMultiplatformVersion" }
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "composeVersion" }

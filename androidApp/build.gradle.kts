@@ -108,7 +108,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.github.dant3.messenger.android"
+        applicationId = "amber.messenger.android"
         versionCode = config.buildNumber
         versionName = config.applicationVersion
 
@@ -224,6 +224,8 @@ configurations {
 
 dependencies {
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity.compose)
+    implementation(projects.modules.ui.uikit)
 }
 
 class Config {
