@@ -5,11 +5,11 @@ internal class RecordingComponent(
     override val priority: InitPriority,
     private val callLog: MutableList<String>,
 ) : LifecycleComponent {
-    override suspend fun init() {
+    override fun init() {
         callLog.add("$name:init")
     }
 
-    override suspend fun dispose() {
+    override fun dispose() {
         callLog.add("$name:dispose")
     }
 }

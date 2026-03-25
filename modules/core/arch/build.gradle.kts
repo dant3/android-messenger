@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(libs.kmp.logger)
+    commonMainApi(projects.modules.core.utils)
     commonMainImplementation(libs.koin.core)
 
     commonTestImplementation(libs.bundles.testing.kotest)

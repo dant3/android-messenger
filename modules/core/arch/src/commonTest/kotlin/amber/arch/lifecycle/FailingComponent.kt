@@ -5,11 +5,11 @@ internal class FailingComponent(
     private val failOnInit: Throwable? = null,
     private val failOnDispose: Throwable? = null,
 ) : LifecycleComponent {
-    override suspend fun init() {
+    override fun init() {
         failOnInit?.let { throw it }
     }
 
-    override suspend fun dispose() {
+    override fun dispose() {
         failOnDispose?.let { throw it }
     }
 }
