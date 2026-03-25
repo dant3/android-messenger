@@ -15,7 +15,9 @@ All library modules live under `modules/`:
 ```
 modules/
 ├── core/          — Core platform-agnostic libraries
-│   └── arch/      — Architecture foundations (Koin DI utilities, base classes)
+│   ├── arch/      — Architecture foundations (lifecycle management, Koin DI utilities)
+│   ├── database/  — Database infrastructure (SQLDelight setup, platform drivers)
+│   └── utils/     — Common utilities (logging)
 ├── ui/            — UI-related libraries
 │   └── uikit/     — Design system (theme, colors, typography, shared components)
 ```

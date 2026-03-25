@@ -1,5 +1,5 @@
 plugins {
-    id("amber.messenger.compose")
+    id("amber.messenger.multiplatform")
 }
 
 dependencies {

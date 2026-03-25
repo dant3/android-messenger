@@ -7,10 +7,10 @@ import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile
 
-class ComposeLibraryPlugin : Plugin<Project> {
+class MultiplatformLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
-            apply(AndroidComposeLibraryPlugin::class.java)
+            apply(AndroidLibraryPlugin::class.java)
         }
 
         extensions.configure<KotlinMultiplatformExtension> {
@@ -30,17 +30,6 @@ class ComposeLibraryPlugin : Plugin<Project> {
                     "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
                     "-opt-in=kotlinx.coroutines.FlowPreview",
                 )
-            }
-        }
-
-        // Compose runtime and SQLDelight runtime both use KLIB unique_name "runtime",
-        // causing duplicate-name warnings during iOS metadata compilation. This warning
-        // is outside the K2 diagnostic system (no -Xsuppress-warning support), so we
-        // disable -Werror for metadata tasks only. Actual target compilations (iosArm64,
-        // jvm, android) still enforce -Werror.
-        tasks.withType<KotlinNativeCompile>().matching { "Metadata" in it.name }.configureEach {
-            compilerOptions {
-                allWarningsAsErrors.set(false)
             }
         }
     }

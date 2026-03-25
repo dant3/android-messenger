@@ -7,6 +7,8 @@
 | `amber.messenger.kotlin` | Pure Kotlin JVM libraries |
 | `amber.messenger.android.library` | Android libraries (auto-enables test fixtures) |
 | `amber.messenger.android.library.compose` | Android libraries with Compose |
+| `amber.messenger.multiplatform` | Multiplatform libraries without Compose (Android + JVM + iOS) |
+| `amber.messenger.compose` | Multiplatform Compose libraries (Android + JVM + iOS) |
 | `amber.messenger.android.application` | App module only |
 
 **Don't manually apply** `com.android.library`, `kotlin-android`, or `kotlin-parcelize` — convention plugins handle composition. Each plugin automatically applies Detekt, Kotlin config, and Android config.

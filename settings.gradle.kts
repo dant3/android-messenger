@@ -50,6 +50,7 @@ include(":desktopApp")
 include(":iosApp")
 
 include(":modules:core:arch")
+include(":modules:core:database")
 include(":modules:core:utils")
 include(":modules:ui:uikit")
 

@@ -64,4 +64,10 @@ gradlePlugin {
             implementationClass = "amber.messenger.gradle.conventions.plugin.ComposeLibraryPlugin"
         }
     }
+    plugins {
+        register("multiplatformLibrary") {
+            id = "amber.messenger.multiplatform"
+            implementationClass = "amber.messenger.gradle.conventions.plugin.MultiplatformLibraryPlugin"
+        }
+    }
 }
