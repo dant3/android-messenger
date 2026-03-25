@@ -49,6 +49,7 @@ include(":androidApp")
 include(":desktopApp")
 include(":iosApp")
 
+include(":modules:core:arch")
 include(":modules:ui:uikit")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

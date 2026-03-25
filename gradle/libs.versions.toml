@@ -43,11 +43,9 @@ protobufVersion = "4.34.0"
 guavaVersion = "33.5.0-android"
 kotlinxCollectionsImmutableVersion = "0.4.0"
 kotlinxSerializationVerison = "1.10.0"
-kloggerVersion = "3.0.5"
+kmpLoggerVersion = "1.2.0"
 libphonenumberVersion = "9.0.25"
 appauthVersion = "0.11.1"
-slf4jApiVersion = "2.0.17"
-logbackAndroidVersion = "3.0.0"
 
 androidxMediaPlayerVersion = "1.9.2"
 
@@ -57,13 +55,10 @@ androidxTest = "1.7.0"
 androidxTestJunit = "1.3.0"
 espresso = "3.7.0"
 junit5 = "6.0.3"
-mockitoCoreVersion = "5.23.0"
-mockitoKotlinVersion = "6.2.3"
-mockitoAndroidVersion = "5.23.0"
-kotestVersion = "5.9.1"
+mokkeryVersion = "3.3.0"
+kotestVersion = "6.1.9"
 hamcrestVersion = "3.0"
 robolectric = "4.16.1"
-logbackClassicVersion = "1.5.32"
 paparazziVersion = "2.0.0-alpha04"
 
 # build logic
@@ -110,6 +105,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVersion" }
 spotbugs = { id = "com.github.spotbugs" , version.ref = "spotbugsGradlePluginVersion" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinVersion" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatformVersion" }
+mokkery = { id = "dev.mokkery", version.ref = "mokkeryVersion" }
 paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazziVersion" }
 google-play-publisher = { id = "com.github.triplet.play", version.ref = "googlePlayPublisherPlugin" }
 rustore-publisher = { id = "ru.cian.rustore-publish-gradle-plugin", version.ref = "rustorePublisherPlugin" }
@@ -136,7 +132,6 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutinesVersion" }
-kotlinx-coroutines-slf4j = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-slf4j", version.ref = "coroutinesVersion" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
 kotlinx-coroutines-debug = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-debug", version.ref = "coroutinesVersion" }
 kotlinx-coroutines-guava = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-guava", version.ref = "coroutinesVersion" }
@@ -223,8 +218,7 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 room-paging = { module = "androidx.room:room-paging", version.ref = "roomVersion" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "roomVersion" }
 
-slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4jApiVersion" }
-kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kloggerVersion" }
+kmp-logger = { module = "io.github.shivathapaa:logger", version.ref = "kmpLoggerVersion" }
 
 firebase-platform = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseVersion" }
 firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
@@ -242,7 +236,6 @@ koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinVersion" }
 koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koinVersion" }
-koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koinVersion" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinVersion" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinVersion" }
 koin-test-junit5 = { module = "io.insert-koin:koin-test-junit5", version.ref = "koinVersion" }
@@ -281,11 +274,8 @@ paparazzi = { module = "app.cash.paparazzi:paparazzi", version.ref = "paparazziV
 
 openid-appauth = { module = "net.openid:appauth", version.ref = "appauthVersion" }
 
-#noinspection GradleDependency: can't use newer versions because it uses java 21
-logback-jvm = { module = "ch.qos.logback:logback-classic", version.ref = "logbackClassicVersion" }
 javafaker = { module = "com.github.javafaker:javafaker", version.require = "1.0.2" }
 
-logback-android = { module = "com.github.tony19:logback-android", version.ref = "logbackAndroidVersion" }
 
 # testing libraries
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "androidTestOrchestratorVersion" }
@@ -301,11 +291,10 @@ junit-jupiter-vintage-engine = { module = "org.junit.vintage:junit-vintage-engin
 junit-platform-engine = { module = "org.junit.platform:junit-platform-engine", version.ref = "junit5" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit5" }
 
-mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlinVersion" }
-mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroidVersion" }
-
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotestVersion" }
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotestVersion" }
+kotest-extensions-koin = { module = "io.kotest:kotest-extensions-koin", version.ref = "kotestVersion" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotestVersion" }
 hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "hamcrestVersion" }
 
 # gradle plugins
@@ -323,24 +312,26 @@ jgit = { module = "org.eclipse.jgit:org.eclipse.jgit", version.ref = "orgEclipse
 semver4j = { module = "com.vdurmont:semver4j", version.ref = "semver4jVersion" }
 
 [bundles]
-logging = ["slf4j-api", "kotlin-logging"]
+logging = ["kmp-logger"]
 room = ["room-runtime", "room-ktx", "room-paging"]
-testing-mockito = ["mockito-core", "mockito-kotlin"]
+testing-kotest = [
+    "kotest-assertions-core",
+    "kotest-framework-engine",
+    "kotlinx-coroutines-test",
+]
 testing-junit5 = [
     "junit-jupiter-api",
     "junit-jupiter-engine",
     "junit-platform-engine",
     "junit-platform-launcher",
     "junit-jupiter-params",
-    "hamcrest",
-    "kotest-assertions-core",
+    "kotest-runner-junit5",
     "kotlinx-coroutines-test",
     "kotlinx-coroutines-debug",
 ]
 testing-koin = [
     "koin-test",
-    "koin-test-junit4",
-    "koin-android",
+    "kotest-extensions-koin",
 ]
 testing-android-unit = [
     "junit4",
