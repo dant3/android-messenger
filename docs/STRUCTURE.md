@@ -17,15 +17,20 @@ modules/
 ├── core/          — Core platform-agnostic libraries
 │   ├── arch/      — Architecture foundations (lifecycle management, Koin DI utilities)
 │   ├── database/  — Database infrastructure (SQLDelight setup, platform drivers)
+│   ├── uikit/     — Design system (theme, colors, typography, shared components)
 │   └── utils/     — Common utilities (logging)
-├── ui/            — UI-related libraries
-│   └── uikit/     — Design system (theme, colors, typography, shared components)
+├── feature/       — Feature modules (business logic + UI)
+│   └── counter/
+│       ├── core/  — Counter business logic (state, store, Koin module)
+│       └── ui/    — Counter Compose screen
+└── ui/            — App-level UI (composes feature screens into the application UI)
 ```
 
 ### Module Categories
 
-- **core/** — Platform-agnostic business logic and infrastructure (DI, networking, persistence, etc.)
-- **ui/** — UI components and feature screens
+- **core/** — Platform-agnostic business logic and infrastructure (DI, networking, persistence, design system, etc.)
+- **feature/** — Feature modules, each split into `core` (logic) and `ui` (Compose screen)
+- **ui/** — App-level Compose UI that assembles feature screens
 
 ## KMP Source Set Layout
 

@@ -225,7 +225,11 @@ configurations {
 dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    implementation(projects.modules.ui.uikit)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.compose.foundation)
+    implementation(libs.koin.android)
+    implementation(projects.modules.core.arch)
+    implementation(projects.modules.ui)
 }
 
 class Config {

@@ -1,18 +1,17 @@
 package amber.messenger.desktop
 
-import amber.ui.uikit.TestScreen
-import androidx.compose.foundation.layout.Box
+import amber.arch.splash.SplashController
+import amber.ui.AppModules
+import amber.ui.AppUi
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.graphics.toComposeImageBitmap
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import org.jetbrains.skia.Image
+import org.koin.core.context.startKoin
+import org.koin.mp.KoinPlatform.getKoin
 import java.awt.Taskbar
 import javax.imageio.ImageIO
 
@@ -36,6 +35,9 @@ private fun setupMacOsDockIcon(resourcePath: String) {
 fun main() {
     System.setProperty("apple.awt.application.name", "Amber")
 
+    startKoin { modules(AppModules) }
+    getKoin().get<SplashController>().markReady()
+
     val icon = loadIcon("app-icon.png")
     setupMacOsDockIcon("app-icon.png")
 
@@ -45,7 +47,7 @@ fun main() {
             title = "Amber Messenger",
             icon = icon,
         ) {
-            TestScreen(modifier = Modifier.fillMaxSize())
+            AppUi(modifier = Modifier.fillMaxSize())
         }
     }
 }

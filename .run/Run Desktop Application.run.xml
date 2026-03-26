@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Desktop Application" type="Application" factoryName="Application" folderName="Desktop Application">
+    <option name="MAIN_CLASS_NAME" value="amber.messenger.desktop.MainKt" />
+    <module name="Amber.desktopApp.jvmMain" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -14,7 +14,9 @@ kotlin {
 }
 
 dependencies {
-    jvmMainImplementation(projects.modules.ui.uikit)
+    jvmMainImplementation(libs.koin.core)
+    jvmMainImplementation(projects.modules.core.arch)
+    jvmMainImplementation(projects.modules.ui)
 }
 
 compose.desktop {

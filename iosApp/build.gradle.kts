@@ -9,7 +9,8 @@ kotlin {
                 implementation(libs.compose.foundation)
                 implementation(libs.compose.material3)
                 implementation(libs.compose.ui)
-                implementation(projects.modules.ui.uikit)
+                implementation(projects.modules.core.arch)
+                implementation(projects.modules.ui)
             }
         }
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A1F72AA2B0000010000001 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F72AA2B0000010000002 /* iOSApp.swift */; };
 		2A1F72AA2B0000010000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F72AA2B0000010000004 /* ContentView.swift */; };
+		6F4208312F6B269300F87147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F4208302F6B269300F87147 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXResourcesBuildPhase section */
+		6F4208322F6B269300F87147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F4208312F6B269300F87147 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		2A1F72AA2B0000010000030 /* iosApp */ = {
 			isa = PBXNativeTarget;
@@ -66,6 +78,7 @@
 			buildPhases = (
 				2A1F72AA2B0000010000040 /* Build Kotlin Framework */,
 				2A1F72AA2B0000010000011 /* Sources */,
+				6F4208322F6B269300F87147 /* Resources */,
 				2A1F72AA2B0000010000010 /* Frameworks */,
 			);
 			buildRules = (
@@ -282,6 +295,7 @@
 					"$(inherited)",
 					"-framework",
 					IosApp,
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amber.messenger.ios;
 				PRODUCT_MODULE_NAME = AmberMessengerIos;
@@ -318,6 +332,7 @@
 					"$(inherited)",
 					"-framework",
 					IosApp,
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = amber.messenger.ios;
 				PRODUCT_MODULE_NAME = AmberMessengerIos;

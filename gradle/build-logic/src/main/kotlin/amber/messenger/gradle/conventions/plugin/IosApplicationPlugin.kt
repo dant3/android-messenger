@@ -2,6 +2,7 @@ package amber.messenger.gradle.conventions.plugin
 
 import amber.messenger.gradle.conventions.configuration.ComposeConfiguration.configureCompose
 import amber.messenger.gradle.conventions.configuration.DetektConfiguration.configureDetekt
+import amber.messenger.gradle.conventions.configuration.IosSimulatorTasks.configureIosSimulatorTasks
 import amber.messenger.gradle.conventions.configuration.KotlinConfiguration.configureKotlin
 import amber.messenger.gradle.conventions.configuration.composeCompilerPluginId
 import io.gitlab.arturbosch.detekt.DetektPlugin
@@ -30,6 +31,7 @@ class IosApplicationPlugin : Plugin<Project> {
                 target.binaries.framework {
                     baseName = "IosApp"
                     isStatic = true
+                    linkerOpts("-lsqlite3")
                 }
             }
         }
@@ -38,6 +40,7 @@ class IosApplicationPlugin : Plugin<Project> {
         configureDetekt()
         configureCompose()
         configureNativeCompilerOptions()
+        configureIosSimulatorTasks()
     }
 
     private fun Project.configureNativeCompilerOptions() {
