@@ -12,6 +12,7 @@ dependencies {
     commonMainImplementation(projects.modules.feature.onboarding.ui)
     commonMainImplementation(projects.modules.feature.onboarding.core)
     commonMainApi(projects.modules.core.database)
+    commonMainImplementation(projects.modules.core.preferences)
     commonMainApi(libs.koin.core)
     commonMainImplementation(libs.koin.compose)
     commonMainImplementation(libs.koin.compose.viewmodel)
