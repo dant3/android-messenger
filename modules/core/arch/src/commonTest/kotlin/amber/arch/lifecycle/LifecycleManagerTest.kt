@@ -22,7 +22,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                 lifecycleComponent(named("first")) {
                     RecordingComponent(
                         "first",
-                        InitPriority.FIRST,
+                        InitPriority.MAX,
                         callLog
                     )
                 }
@@ -36,7 +36,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                 lifecycleComponent(named("last")) {
                     RecordingComponent(
                         "last",
-                        InitPriority.LAST,
+                        InitPriority.MIN,
                         callLog
                     )
                 }
@@ -69,9 +69,9 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                 val error = RuntimeException("first failed")
                 val manager = LifecycleManager(
                     listOf(
-                        FailingComponent(InitPriority.FIRST, failOnInit = error),
+                        FailingComponent(InitPriority.MAX, failOnInit = error),
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
-                        RecordingComponent("last", InitPriority.LAST, callLog),
+                        RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
                 )
 
@@ -83,9 +83,9 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
             test("init collects multiple failures as suppressed exceptions") {
                 val manager = LifecycleManager(
                     listOf(
-                        FailingComponent(InitPriority.FIRST, failOnInit = RuntimeException("first failed")),
+                        FailingComponent(InitPriority.MAX, failOnInit = RuntimeException("first failed")),
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
-                        FailingComponent(InitPriority.LAST, failOnInit = RuntimeException("last failed")),
+                        FailingComponent(InitPriority.MIN, failOnInit = RuntimeException("last failed")),
                     ),
                 )
 
@@ -101,9 +101,9 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                 val error = RuntimeException("default failed")
                 val manager = LifecycleManager(
                     listOf(
-                        RecordingComponent("first", InitPriority.FIRST, callLog),
+                        RecordingComponent("first", InitPriority.MAX, callLog),
                         FailingComponent(InitPriority.DEFAULT, failOnDispose = error),
-                        RecordingComponent("last", InitPriority.LAST, callLog),
+                        RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
                 )
 
@@ -115,9 +115,9 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
             test("dispose collects multiple failures as suppressed exceptions") {
                 val manager = LifecycleManager(
                     listOf(
-                        FailingComponent(InitPriority.FIRST, failOnDispose = RuntimeException("first failed")),
+                        FailingComponent(InitPriority.MAX, failOnDispose = RuntimeException("first failed")),
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
-                        FailingComponent(InitPriority.LAST, failOnDispose = RuntimeException("last failed")),
+                        FailingComponent(InitPriority.MIN, failOnDispose = RuntimeException("last failed")),
                     ),
                 )
 
@@ -131,8 +131,8 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
             test("init does not catch errors") {
                 val manager = LifecycleManager(
                     listOf(
-                        FailingComponent(InitPriority.FIRST, failOnInit = OutOfMemoryError("oom")),
-                        RecordingComponent("last", InitPriority.LAST, callLog),
+                        FailingComponent(InitPriority.MAX, failOnInit = OutOfMemoryError("oom")),
+                        RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
                 )
 
@@ -144,8 +144,8 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
             test("dispose does not catch errors") {
                 val manager = LifecycleManager(
                     listOf(
-                        FailingComponent(InitPriority.FIRST, failOnDispose = OutOfMemoryError("oom")),
-                        RecordingComponent("last", InitPriority.LAST, callLog),
+                        FailingComponent(InitPriority.MAX, failOnDispose = OutOfMemoryError("oom")),
+                        RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
                 )
 

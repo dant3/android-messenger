@@ -22,7 +22,7 @@ private fun loadIcon(resourcePath: String): BitmapPainter {
     return BitmapPainter(Image.makeFromEncoded(bytes).toComposeImageBitmap())
 }
 
-private fun setupMacOsDockIcon(resourcePath: String) {
+private fun setupTaskbarIcon(resourcePath: String) {
     if (!Taskbar.isTaskbarSupported()) return
     val taskbar = Taskbar.getTaskbar()
     if (!taskbar.isSupported(Taskbar.Feature.ICON_IMAGE)) return
@@ -39,7 +39,7 @@ fun main() {
     getKoin().get<SplashController>().markReady()
 
     val icon = loadIcon("app-icon.png")
-    setupMacOsDockIcon("app-icon.png")
+    setupTaskbarIcon("app-icon.png")
 
     application {
         Window(

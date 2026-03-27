@@ -13,8 +13,8 @@ value class InitPriority(val value: Int) : Comparable<InitPriority> {
     operator fun minus(other: Int): InitPriority = InitPriority(value - other)
 
     companion object {
-        val FIRST = InitPriority(Int.MAX_VALUE)
+        val MAX = InitPriority(Int.MAX_VALUE)
         val DEFAULT = InitPriority(0)
-        val LAST = InitPriority(Int.MIN_VALUE)
+        val MIN = InitPriority(Int.MIN_VALUE)
     }
 }

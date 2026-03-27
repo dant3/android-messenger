@@ -91,26 +91,26 @@ private fun firaSansCondensedFontFamily(): FontFamily = FontFamily(
 
 @Composable
 fun appTypography(): Typography {
-    val fontFamily = firaSansFontFamily()
-    val condensedFontFamily = firaSansCondensedFontFamily()
+    val firaSans = firaSansFontFamily()
+    val firaSansCondensed = firaSansCondensedFontFamily()
     val baseline = Typography()
-    return remember(fontFamily) {
+    return remember(firaSans) {
         Typography(
-            displayLarge = baseline.displayLarge.copy(fontFamily = fontFamily),
-            displayMedium = baseline.displayMedium.copy(fontFamily = fontFamily),
-            displaySmall = baseline.displaySmall.copy(fontFamily = fontFamily),
-            headlineLarge = baseline.headlineLarge.copy(fontFamily = fontFamily),
-            headlineMedium = baseline.headlineMedium.copy(fontFamily = fontFamily),
-            headlineSmall = baseline.headlineSmall.copy(fontFamily = fontFamily),
-            titleLarge = baseline.titleLarge.copy(fontFamily = fontFamily),
-            titleMedium = baseline.titleMedium.copy(fontFamily = fontFamily),
-            titleSmall = baseline.titleSmall.copy(fontFamily = fontFamily),
-            bodyLarge = baseline.bodyLarge.copy(fontFamily = condensedFontFamily),
-            bodyMedium = baseline.bodyMedium.copy(fontFamily = condensedFontFamily),
-            bodySmall = baseline.bodySmall.copy(fontFamily = condensedFontFamily),
-            labelLarge = baseline.labelLarge.copy(fontFamily = condensedFontFamily),
-            labelMedium = baseline.labelMedium.copy(fontFamily = condensedFontFamily),
-            labelSmall = baseline.labelSmall.copy(fontFamily = condensedFontFamily),
+            displayLarge = baseline.displayLarge.copy(fontFamily = firaSans),
+            displayMedium = baseline.displayMedium.copy(fontFamily = firaSans),
+            displaySmall = baseline.displaySmall.copy(fontFamily = firaSans),
+            headlineLarge = baseline.headlineLarge.copy(fontFamily = firaSans),
+            headlineMedium = baseline.headlineMedium.copy(fontFamily = firaSans),
+            headlineSmall = baseline.headlineSmall.copy(fontFamily = firaSans),
+            titleLarge = baseline.titleLarge.copy(fontFamily = firaSans),
+            titleMedium = baseline.titleMedium.copy(fontFamily = firaSans),
+            titleSmall = baseline.titleSmall.copy(fontFamily = firaSans),
+            bodyLarge = baseline.bodyLarge.copy(fontFamily = firaSansCondensed),
+            bodyMedium = baseline.bodyMedium.copy(fontFamily = firaSansCondensed),
+            bodySmall = baseline.bodySmall.copy(fontFamily = firaSansCondensed),
+            labelLarge = baseline.labelLarge.copy(fontFamily = firaSansCondensed),
+            labelMedium = baseline.labelMedium.copy(fontFamily = firaSansCondensed),
+            labelSmall = baseline.labelSmall.copy(fontFamily = firaSansCondensed),
         )
     }
 }

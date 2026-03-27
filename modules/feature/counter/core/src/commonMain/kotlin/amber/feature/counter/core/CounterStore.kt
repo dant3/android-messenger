@@ -1,6 +1,6 @@
 package amber.feature.counter.core
 
-import amber.feature.counter.core.db.CounterQueries
+import amber.database.CounterQueries
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToOne
 import kotlinx.coroutines.Dispatchers

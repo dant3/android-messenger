@@ -27,9 +27,17 @@ kotlin {
     }
 }
 
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("amber.database")
+        }
+    }
+}
+
 dependencies {
     commonMainApi(projects.modules.core.utils)
-    commonMainImplementation(libs.bundles.sqldelight)
+    commonMainApi(libs.bundles.sqldelight)
     commonMainImplementation(libs.koin.core)
 
     commonTestImplementation(libs.bundles.testing.kotest)

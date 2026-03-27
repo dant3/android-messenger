@@ -3,6 +3,8 @@
 coroutinesVersion = "1.10.2"
 composeVersion = "1.10.5"
 composeMultiplatformVersion = "1.11.0-alpha04"
+jetbrainsNavigationVersion = "2.9.2"
+jetbrainsLifecycleVersion = "2.11.0-alpha01"
 androidxMaterial3 = "1.4.0"
 constraintLayoutComposeVersion = "1.1.1"
 
@@ -14,8 +16,7 @@ androidxActivityCompose = "1.13.0"
 androidxAnnotation = "1.9.1"
 androidxMedia = "1.7.1"
 androidxLifecycleVersion = "2.10.0"
-androidxNavigationVersion = "2.9.7"
-androidxMaterialNavigationVersion = "1.10.1"
+material3NavigationKmpVersion = "0.0.2"
 androidxWorkRuntimeKtxVersion = "2.11.1"
 androidxDatastoreVersion = "1.2.1"
 androidxAdaptiveVersion = "1.2.0"
@@ -104,6 +105,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVersion" }
 spotbugs = { id = "com.github.spotbugs" , version.ref = "spotbugsGradlePluginVersion" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinVersion" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatformVersion" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
 mokkery = { id = "dev.mokkery", version.ref = "mokkeryVersion" }
 paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazziVersion" }
 google-play-publisher = { id = "com.github.triplet.play", version.ref = "googlePlayPublisherPlugin" }
@@ -127,6 +129,7 @@ kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", versi
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinVersion" }
 
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutableVersion" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinxSerializationVerison" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVerison" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
@@ -151,10 +154,7 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidxLifecycleVersion" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidxLifecycleVersion" }
 
-androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidxNavigationVersion" }
-androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidxNavigationVersion" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationVersion" }
-androidx-navigation-material = { module = "androidx.compose.material:material-navigation", version.ref = "androidxMaterialNavigationVersion" }
+material3-navigation-kmp = { module = "io.github.stefanoq21:material3-navigation-kmp", version.ref = "material3NavigationKmpVersion" }
 
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "androidPagingVersion" }
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "androidPagingVersion" }
@@ -183,6 +183,9 @@ compose-resources = { module = "org.jetbrains.compose.components:components-reso
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatformVersion" }
 compose-runtime-saveable = { module = "org.jetbrains.compose.runtime:runtime-saveable", version.ref = "composeMultiplatformVersion" }
 compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "composeVersion" }
+
+jetbrains-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrainsNavigationVersion" }
+jetbrains-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "jetbrainsLifecycleVersion" }
 compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "composeMultiplatformVersion" }
 compose-ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatformVersion" }
 compose-constraintlayout = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintLayoutComposeVersion" }
@@ -235,6 +238,8 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinVers
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinVersion" }
 koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koinVersion" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinVersion" }
+koin-compose-viewmodel-navigation = { module = "io.insert-koin:koin-compose-viewmodel-navigation", version.ref = "koinVersion" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koinVersion" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinVersion" }
 koin-test-junit5 = { module = "io.insert-koin:koin-test-junit5", version.ref = "koinVersion" }

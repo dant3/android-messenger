@@ -29,8 +29,8 @@ object AndroidComposeConfiguration {
 
         dependencies {
             "commonMainApi"(libs.findLibrary("compose.runtime").get())
+            "commonMainImplementation"(libs.findLibrary("compose.ui.tooling.preview").get())
             "debugImplementation"(libs.findLibrary("compose.ui.tooling").get())
-            "debugImplementation"(libs.findLibrary("compose.ui.tooling.preview").get())
         }
     }
 }

@@ -3,7 +3,6 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.modules.core.database)
     commonMainApi(projects.modules.core.arch)
     commonMainImplementation(libs.koin.core)
 

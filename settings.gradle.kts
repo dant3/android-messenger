@@ -51,11 +51,15 @@ include(":iosApp")
 
 include(":modules:core:arch")
 include(":modules:core:database")
+include(":modules:core:navigation")
 include(":modules:core:uikit")
 include(":modules:core:utils")
 include(":modules:ui")
 
 include(":modules:feature:counter:core")
 include(":modules:feature:counter:ui")
+
+include(":modules:feature:onboarding:core")
+include(":modules:feature:onboarding:ui")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
