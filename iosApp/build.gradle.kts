@@ -10,6 +10,7 @@ kotlin {
                 implementation(libs.compose.material3)
                 implementation(libs.compose.ui)
                 implementation(projects.modules.core.arch)
+                implementation(projects.modules.runtime)
                 implementation(projects.modules.ui)
             }
         }

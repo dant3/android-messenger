@@ -34,6 +34,7 @@ markwonVersion = "4.6.2"
 accompanistVersion = "0.37.3"
 gsonVersion = "2.13.2"
 coilVersion = "3.4.0"
+javacvVersion = "1.5.11"
 firebaseVersion = "34.10.0"
 playServicesVersion = "21.5.0"
 okHttpVersion = "5.3.2"
@@ -50,6 +51,7 @@ libphonenumberVersion = "9.0.25"
 appauthVersion = "0.11.1"
 
 androidxMediaPlayerVersion = "1.9.2"
+composeMediaPlayerVersion = "0.8.7"
 
 # testing
 androidTestOrchestratorVersion = "1.6.1"
@@ -208,7 +210,10 @@ coil-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coilVersion" }
 coil-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coilVersion" }
 coil-video = { module = "io.coil-kt.coil3:coil-video", version.ref = "coilVersion" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilVersion" }
+coil-network-ktor3 = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coilVersion" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilVersion" }
+
+javacv-platform = { module = "org.bytedeco:javacv-platform", version.ref = "javacvVersion" }
 
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okHttpVersion" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttpVersion" }
@@ -234,6 +239,8 @@ firebase-perf = { module = "com.google.firebase:firebase-perf" }
 androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "androidxMediaPlayerVersion" }
 androidx-media3-exoplayer-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "androidxMediaPlayerVersion" }
 androidx-media3-datasource-okhttp = { module = "androidx.media3:media3-datasource-okhttp", version.ref = "androidxMediaPlayerVersion" }
+
+compose-media-player = { module = "io.github.kdroidfilter:composemediaplayer", version.ref = "composeMediaPlayerVersion" }
 
 webrtc = { module = "org.webrtc:libwebrtc", version = "1.0.7444" }
 
@@ -263,6 +270,7 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorVer
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorVersion" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorVersion" }
 ktor-client-android = { module ="io.ktor:ktor-client-android", version.ref = "ktorVersion" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorVersion" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorVersion" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
 ktor-serialization-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktorVersion" }

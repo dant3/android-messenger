@@ -1,7 +1,7 @@
 package amber.messenger.desktop
 
 import amber.arch.splash.SplashController
-import amber.ui.AppModules
+import amber.runtime.AppModules
 import amber.ui.AppUi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier

@@ -1,9 +1,11 @@
 package amber.arch.lifecycle
 
+import amber.arch.splash.SplashController
 import amber.core.utils.logging.logger
 
 class LifecycleManager(
     private val components: List<LifecycleComponent>,
+    private val splashController: SplashController,
 ) {
     private val log = logger {}
 
@@ -12,6 +14,7 @@ class LifecycleManager(
             log.verbose { "Running $it init" }
             it.init()
         }
+        splashController.markReady()
     }
 
     fun dispose() {

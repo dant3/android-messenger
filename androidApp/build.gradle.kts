@@ -229,6 +229,7 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.koin.android)
     implementation(projects.modules.core.arch)
+    implementation(projects.modules.runtime)
     implementation(projects.modules.ui)
 }
 

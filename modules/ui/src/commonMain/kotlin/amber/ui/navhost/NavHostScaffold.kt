@@ -4,6 +4,7 @@ import amber.modules.core.uikit.generated.resources.Res
 import amber.modules.core.uikit.generated.resources.app_name
 import amber.navigation.routes.CounterRoute
 import amber.navigation.routes.OnboardingRoute
+import amber.navigation.routes.Route
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -21,7 +22,7 @@ import org.koin.compose.koinInject
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NavHostScaffold(modifier: Modifier = Modifier) {
+fun NavHostScaffold(startDestination: Route, modifier: Modifier = Modifier) {
     val navHostBuilderInfrastructure = koinInject<NavHostBuilderInfrastructure>()
 
     Scaffold(
@@ -39,7 +40,7 @@ fun NavHostScaffold(modifier: Modifier = Modifier) {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = OnboardingRoute,
+            startDestination = startDestination,
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize(),

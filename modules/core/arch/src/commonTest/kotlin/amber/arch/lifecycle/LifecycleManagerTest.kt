@@ -1,5 +1,6 @@
 package amber.arch.lifecycle
 
+import amber.arch.CoreArchModule
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.koin.KoinExtension
@@ -42,7 +43,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                 }
             }
 
-            extension(KoinExtension(modules = listOf(CoreLifecycleModule, testModule)))
+            extension(KoinExtension(modules = listOf(CoreArchModule, testModule)))
 
             val manager: LifecycleManager by inject()
 

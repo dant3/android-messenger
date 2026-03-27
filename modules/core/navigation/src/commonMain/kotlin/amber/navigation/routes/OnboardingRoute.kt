@@ -3,4 +3,4 @@ package amber.navigation.routes
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object OnboardingRoute
+data object OnboardingRoute : Route

@@ -1,7 +1,7 @@
 package amber.messenger.android
 
 import amber.arch.splash.SplashController
-import amber.ui.AppModules
+import amber.runtime.AppModules
 import android.app.Application
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext

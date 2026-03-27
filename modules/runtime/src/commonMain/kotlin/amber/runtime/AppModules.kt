@@ -1,19 +1,21 @@
-package amber.ui
+package amber.runtime
 
-import amber.arch.lifecycle.CoreLifecycleModule
+import amber.arch.CoreArchModule
 import amber.database.AppDatabaseModule
 import amber.database.CoreDatabaseModule
-import amber.preferences.CorePreferencesModule
+import amber.mediaplayer.CoreMediaPlayerModule
 import amber.feature.counter.core.CounterFeatureModule
 import amber.feature.counter.ui.CounterFeatureUiModule
 import amber.feature.onboarding.core.OnboardingFeatureModule
 import amber.feature.onboarding.ui.OnboardingFeatureUiModule
+import amber.preferences.CorePreferencesModule
 import amber.ui.navhost.NavHostModule
 import org.koin.core.module.Module
 
 val AppModules: List<Module> = listOf(
-    CoreLifecycleModule,
+    CoreArchModule,
     CoreDatabaseModule,
+    CoreMediaPlayerModule,
     CorePreferencesModule,
     AppDatabaseModule,
     CounterFeatureModule,

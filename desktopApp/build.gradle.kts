@@ -16,6 +16,7 @@ kotlin {
 dependencies {
     jvmMainImplementation(libs.koin.core)
     jvmMainImplementation(projects.modules.core.arch)
+    jvmMainImplementation(projects.modules.runtime)
     jvmMainImplementation(projects.modules.ui)
 }
 
