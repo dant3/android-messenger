@@ -20,6 +20,7 @@ material3NavigationKmpVersion = "0.0.2"
 androidxWorkRuntimeKtxVersion = "2.11.1"
 androidxDatastoreVersion = "1.2.1"
 androidxAdaptiveVersion = "1.2.0"
+androidxSecurityCryptoVersion = "1.0.0"
 androidxMaterialAdaptiveNavigationVersion = "1.4.0"
 sqliteAndroidVersion = "3.49.0"
 composeShimmerVersion = "1.3.3"
@@ -172,6 +173,8 @@ androidx-material3-adaptive-android = { module = "androidx.compose.material3.ada
 androidx-material3-adaptive-layout = { module = "androidx.compose.material3.adaptive:adaptive-layout", version.ref = "androidxAdaptiveVersion" }
 androidx-material3-adaptive-navigation = { module = "androidx.compose.material3:material3-adaptive-navigation-suite", version.ref = "androidxMaterialAdaptiveNavigationVersion" }
 
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "androidxSecurityCryptoVersion" }
+
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWorkRuntimeKtxVersion" }
 guava = { module = "com.google.guava:guava", version.ref = "guavaVersion" } # needed for workers async integration
 
@@ -274,6 +277,7 @@ ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "kto
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorVersion" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
 ktor-serialization-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktorVersion" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
 
 androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTest" }
 androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidxTest" }

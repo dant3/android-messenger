@@ -9,6 +9,7 @@ dependencies {
     commonMainImplementation(projects.modules.core.imageLoading)
     commonMainImplementation(projects.modules.core.uikit)
     commonMainImplementation(projects.modules.core.preferences)
+    commonMainImplementation(projects.modules.core.auth)
     commonMainImplementation(libs.koin.compose)
     commonMainImplementation(libs.koin.compose.viewmodel)
     commonMainImplementation(libs.koin.compose.viewmodel.navigation)

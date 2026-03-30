@@ -4,6 +4,8 @@ plugins {
 
 dependencies {
     commonMainImplementation(projects.modules.core.arch)
+    commonMainImplementation(projects.modules.core.auth)
+    commonMainImplementation(projects.modules.core.client.impl)
     commonMainImplementation(projects.modules.core.database)
     commonMainImplementation(projects.modules.core.mediaPlayer)
     commonMainImplementation(projects.modules.core.preferences)

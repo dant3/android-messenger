@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">Amber Messenger</string>
+    <string name="back">Back</string>
+
+    <!-- Onboarding: Welcome -->
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="onboarding_welcome_subtitle">Your secure messaging app</string>
+
+    <!-- Onboarding: Register -->
+    <string name="onboarding_register_title">Create Account</string>
+    <string name="onboarding_register_email_label">Email</string>
+    <string name="onboarding_register_email_placeholder">you@example.com</string>
+    <string name="onboarding_register_button">Register</string>
+
+    <!-- Onboarding: Email Confirmation -->
+    <string name="onboarding_confirm_email_title">Confirm Your Email</string>
+    <string name="onboarding_confirm_email_description">We sent a 6-digit code to %1$s</string>
+    <string name="onboarding_confirm_email_code_label">Confirmation Code</string>
+    <string name="onboarding_confirm_email_button">Confirm</string>
+
+    <!-- Onboarding: Set Password -->
+    <string name="onboarding_set_password_title">Set a Password</string>
+    <string name="onboarding_set_password_description">Choose a strong password for your account</string>
+    <string name="onboarding_set_password_label">Password</string>
+    <string name="onboarding_set_password_button">Set Password</string>
+
+    <!-- Onboarding: Login -->
+    <string name="onboarding_login_title">Welcome Back</string>
+    <string name="onboarding_login_email_label">Email</string>
+    <string name="onboarding_login_password_label">Password</string>
+    <string name="onboarding_login_button">Login</string>
+    <string name="onboarding_login_forgot_password">Forgot password?</string>
+
+    <!-- Logout -->
+    <string name="logout_dialog_title">Log Out</string>
+    <string name="logout_dialog_message">Are you sure you want to log out?</string>
+    <string name="logout_dialog_confirm">Log Out</string>
+    <string name="logout_dialog_dismiss">Cancel</string>
+
+    <!-- Onboarding: Forgot Password -->
+    <string name="onboarding_forgot_password_title">Forgot Password</string>
+    <string name="onboarding_forgot_password_description">Enter your email and we\'ll send a reset code</string>
+    <string name="onboarding_forgot_password_button">Send Reset Code</string>
+
+    <!-- Onboarding: Reset Password -->
+    <string name="onboarding_reset_password_title">Reset Password</string>
+    <string name="onboarding_reset_password_code_label">Reset Code</string>
+    <string name="onboarding_reset_password_new_password_label">New Password</string>
+    <string name="onboarding_reset_password_button">Reset Password</string>
 </resources>

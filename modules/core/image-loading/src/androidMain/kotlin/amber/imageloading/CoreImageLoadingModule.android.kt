@@ -1,5 +1,6 @@
 package amber.imageloading
 
+import amber.arch.lifecycle.lifecycleComponent
 import android.content.Context
 import coil3.gif.AnimatedImageDecoder
 import coil3.video.VideoFrameDecoder
@@ -13,4 +14,5 @@ actual val CoreImageLoaderModule: Module = module {
             add(VideoFrameDecoder.Factory())
         }
     }
+    lifecycleComponent { ImageLoaderLifecycleComponent(get()) }
 }

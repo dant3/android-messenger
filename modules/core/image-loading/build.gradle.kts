@@ -11,6 +11,7 @@ kotlin {
         androidMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
+                implementation(libs.coil.gif)
                 implementation(libs.coil.video)
             }
         }
@@ -33,7 +34,6 @@ dependencies {
     commonMainImplementation(projects.modules.core.arch)
     commonMainImplementation(libs.coil.network.ktor3)
     commonMainImplementation(libs.coil.svg)
-    commonMainImplementation(libs.coil.gif)
     commonMainImplementation(libs.ktor.client.core)
     commonMainImplementation(libs.koin.core)
 }

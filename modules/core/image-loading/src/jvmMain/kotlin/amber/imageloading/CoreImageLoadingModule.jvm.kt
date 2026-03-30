@@ -1,5 +1,6 @@
 package amber.imageloading
 
+import amber.arch.lifecycle.lifecycleComponent
 import coil3.PlatformContext
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -10,4 +11,5 @@ actual val CoreImageLoaderModule: Module = module {
             add(JvmVideoFrameDecoder.Factory())
         }
     }
+    lifecycleComponent { ImageLoaderLifecycleComponent(get()) }
 }
