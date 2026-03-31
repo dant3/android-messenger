@@ -17,11 +17,14 @@ import amber.feature.onboarding.ui.screen.WelcomeScreen
 import amber.navigation.NavGraphComponent
 import amber.navigation.routes.CounterRoute
 import amber.navigation.routes.OnboardingRoute
+import amber.ui.uikit.scaffold.BackTopBar
+import amber.ui.uikit.scaffold.ScreenScaffold
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -91,16 +94,21 @@ class OnboardingNavGraphComponent : NavGraphComponent {
             ) { backStackEntry ->
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                RegisterScreen(
-                    state = state,
-                    onEmailChange = viewModel::updateEmail,
-                    onRegister = {
-                        viewModel.register {
-                            navController.navigate(EmailConfirmationRoute(state.email))
-                        }
-                    },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    RegisterScreen(
+                        state = state,
+                        onEmailChange = viewModel::updateEmail,
+                        onRegister = {
+                            viewModel.register {
+                                navController.navigate(EmailConfirmationRoute(state.email))
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
 
             composable<EmailConfirmationRoute>(
@@ -112,17 +120,22 @@ class OnboardingNavGraphComponent : NavGraphComponent {
                 val route = backStackEntry.toRoute<EmailConfirmationRoute>()
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                EmailConfirmationScreen(
-                    email = route.email,
-                    state = state,
-                    onCodeChange = viewModel::updateConfirmationCode,
-                    onConfirm = {
-                        viewModel.confirmEmail(route.email) {
-                            navController.navigate(SetPasswordRoute(route.email))
-                        }
-                    },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    EmailConfirmationScreen(
+                        email = route.email,
+                        state = state,
+                        onCodeChange = viewModel::updateConfirmationCode,
+                        onConfirm = {
+                            viewModel.confirmEmail(route.email) {
+                                navController.navigate(SetPasswordRoute(route.email))
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
 
             composable<SetPasswordRoute>(
@@ -134,18 +147,23 @@ class OnboardingNavGraphComponent : NavGraphComponent {
                 val route = backStackEntry.toRoute<SetPasswordRoute>()
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                SetPasswordScreen(
-                    state = state,
-                    onPasswordChange = viewModel::updatePassword,
-                    onSetPassword = {
-                        viewModel.setPassword(route.email) {
-                            navController.navigate(CounterRoute) {
-                                popUpTo<OnboardingRoute> { inclusive = true }
-                            }
-                        }
-                    },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    SetPasswordScreen(
+                        state = state,
+                        onPasswordChange = viewModel::updatePassword,
+                        onSetPassword = {
+                            viewModel.setPassword(route.email) {
+                                navController.navigate(CounterRoute) {
+                                    popUpTo<OnboardingRoute> { inclusive = true }
+                                }
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
 
             composable<LoginRoute>(
@@ -156,20 +174,25 @@ class OnboardingNavGraphComponent : NavGraphComponent {
             ) { backStackEntry ->
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                LoginScreen(
-                    state = state,
-                    onEmailChange = viewModel::updateEmail,
-                    onPasswordChange = viewModel::updatePassword,
-                    onLogin = {
-                        viewModel.login {
-                            navController.navigate(CounterRoute) {
-                                popUpTo<OnboardingRoute> { inclusive = true }
-                            }
-                        }
-                    },
-                    onForgotPassword = { navController.navigate(ForgotPasswordRoute) },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    LoginScreen(
+                        state = state,
+                        onEmailChange = viewModel::updateEmail,
+                        onPasswordChange = viewModel::updatePassword,
+                        onLogin = {
+                            viewModel.login {
+                                navController.navigate(CounterRoute) {
+                                    popUpTo<OnboardingRoute> { inclusive = true }
+                                }
+                            }
+                        },
+                        onForgotPassword = { navController.navigate(ForgotPasswordRoute) },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
 
             composable<ForgotPasswordRoute>(
@@ -180,16 +203,21 @@ class OnboardingNavGraphComponent : NavGraphComponent {
             ) { backStackEntry ->
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                ForgotPasswordScreen(
-                    state = state,
-                    onEmailChange = viewModel::updateEmail,
-                    onSendResetCode = {
-                        viewModel.forgotPassword {
-                            navController.navigate(ResetPasswordRoute(state.email))
-                        }
-                    },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    ForgotPasswordScreen(
+                        state = state,
+                        onEmailChange = viewModel::updateEmail,
+                        onSendResetCode = {
+                            viewModel.forgotPassword {
+                                navController.navigate(ResetPasswordRoute(state.email))
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
 
             composable<ResetPasswordRoute>(
@@ -201,20 +229,25 @@ class OnboardingNavGraphComponent : NavGraphComponent {
                 val route = backStackEntry.toRoute<ResetPasswordRoute>()
                 val viewModel = rememberOnboardingViewModel(navController, backStackEntry)
                 val state by viewModel.state.collectAsState()
-                ResetPasswordScreen(
-                    email = route.email,
-                    state = state,
-                    onCodeChange = viewModel::updateConfirmationCode,
-                    onNewPasswordChange = viewModel::updateNewPassword,
-                    onResetPassword = {
-                        viewModel.resetPassword(route.email) {
-                            navController.navigate(CounterRoute) {
-                                popUpTo<OnboardingRoute> { inclusive = true }
-                            }
-                        }
-                    },
+                ScreenScaffold(
+                    topBar = { BackTopBar(onNavigateUp = { navController.navigateUp() }) },
                     modifier = Modifier.fillMaxSize(),
-                )
+                ) { padding ->
+                    ResetPasswordScreen(
+                        email = route.email,
+                        state = state,
+                        onCodeChange = viewModel::updateConfirmationCode,
+                        onNewPasswordChange = viewModel::updateNewPassword,
+                        onResetPassword = {
+                            viewModel.resetPassword(route.email) {
+                                navController.navigate(CounterRoute) {
+                                    popUpTo<OnboardingRoute> { inclusive = true }
+                                }
+                            }
+                        },
+                        modifier = Modifier.fillMaxSize().padding(padding),
+                    )
+                }
             }
         }
     }

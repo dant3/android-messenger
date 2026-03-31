@@ -1,12 +1,15 @@
 package amber.feature.onboarding.ui.screen
 
 import amber.modules.core.uikit.generated.resources.Res
+import amber.modules.core.uikit.generated.resources.app_logo
 import amber.modules.core.uikit.generated.resources.app_name
 import amber.modules.core.uikit.generated.resources.login
 import amber.modules.core.uikit.generated.resources.onboarding_welcome_subtitle
 import amber.modules.core.uikit.generated.resources.register
 import amber.ui.uikit.preview.PreviewComponent
 import amber.ui.uikit.preview.UiPreview
+import amber.ui.uikit.transition.optionalSharedElement
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement.Absolute.spacedBy
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,10 +18,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Chat
 import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -52,11 +53,12 @@ private fun WelcomeContent(
         verticalArrangement = spacedBy(16.dp, Alignment.CenterVertically),
         modifier = modifier.padding(horizontal = 32.dp),
     ) {
-        Icon(
-            imageVector = Icons.AutoMirrored.Filled.Chat,
+        Image(
+            painter = painterResource(Res.drawable.app_logo),
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.size(96.dp),
+            modifier = Modifier
+                .size(96.dp)
+                .optionalSharedElement("app_logo"),
         )
 
         Text(
