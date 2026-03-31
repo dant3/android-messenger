@@ -11,6 +11,7 @@ import amber.messenger.gradle.conventions.configuration.KotlinConfiguration.conf
 class KotlinLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply(BasePlugin::class.java)
             apply("org.jetbrains.kotlin.multiplatform")
             apply(DetektPlugin::class.java)
         }

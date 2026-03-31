@@ -15,6 +15,7 @@ import amber.messenger.gradle.conventions.configuration.composeCompilerPluginId
 class AndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply(BasePlugin::class.java)
             apply("org.jetbrains.kotlin.multiplatform")
             apply("com.android.application")
             apply("org.gradle.android.cache-fix")

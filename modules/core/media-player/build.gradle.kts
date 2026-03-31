@@ -4,7 +4,9 @@ plugins {
 
 configurations.configureEach {
     resolutionStrategy.eachDependency {
-        if (requested.group.startsWith("org.jetbrains.compose")) {
+        if (requested.group.startsWith("org.jetbrains.compose") &&
+            !requested.group.startsWith("org.jetbrains.compose.hot-reload")
+        ) {
             useVersion(libs.versions.composeMultiplatformVersion.get())
         }
     }

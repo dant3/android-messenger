@@ -1,0 +1,32 @@
+All Rights Reserved
+
+Copyright (c) 2026 Viacheslav Blinov (blinov.vyacheslav@gmail.com)
+
+This software and associated source code, documentation, and all other files
+in this repository (collectively, the "Work") are the exclusive private property
+of the copyright holder.
+
+No permission is granted to any person or entity to use, copy, modify, merge,
+publish, distribute, sublicense, sell, reproduce, or create derivative works
+of the Work, in whole or in part, for any purpose whatsoever, without the prior
+explicit written permission of the copyright holder.
+
+This restriction applies to, but is not limited to:
+
+  - Any use of the Work for commercial or non-commercial purposes;
+  - Any reproduction, distribution, or public display of the Work;
+  - Any scraping, indexing, ingestion, or processing of the Work by automated
+    systems, including but not limited to artificial intelligence models,
+    machine learning systems, large language models, data mining tools, web
+    crawlers, or any other automated data collection or analysis technology;
+  - Any use of the Work as training data, fine-tuning data, retrieval-augmented
+    generation context, or any other input to artificial intelligence or machine
+    learning systems;
+  - Any reverse engineering, decompilation, or disassembly of the Work.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK.
+
+Unauthorized use of the Work constitutes a violation of this license and may be
+subject to legal action.

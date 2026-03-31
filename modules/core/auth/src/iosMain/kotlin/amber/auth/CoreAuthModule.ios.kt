@@ -1,11 +1,10 @@
 package amber.auth
 
 import org.koin.core.module.Module
+import org.koin.core.module.dsl.singleOf
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
-actual val CoreAuthModule: Module = module {
-    single<SecureStorage> { IosSecureStorage() }
-    single { AuthManager(secureStorage = get()) }
-    single<AuthTokenStorage> { get<AuthManager>() }
-    single<AuthStateProvider> { get<AuthManager>() }
+actual val CoreAuthStorageModule: Module = module {
+    singleOf(::IosSecureStorage).bind(SecureStorage::class)
 }

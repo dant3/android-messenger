@@ -30,7 +30,9 @@ fun ScreenScaffold(
         Scaffold(
             modifier = modifier,
             topBar = topBar ?: title?.let {
-                { NavigableTopAppBar(title = it, onNavigateUp = onNavigateUp) }
+                {
+                    NavigableTopAppBar(title = it, onNavigateUp = onNavigateUp)
+                }
             } ?: {},
             bottomBar = bottomBar,
             snackbarHost = { SnackbarHost(hostState = snackbarHostState) },

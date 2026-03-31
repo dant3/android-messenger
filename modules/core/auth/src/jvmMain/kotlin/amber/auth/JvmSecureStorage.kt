@@ -8,7 +8,6 @@ import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
-import kotlin.io.path.Path
 import kotlin.io.path.exists
 import kotlin.io.path.inputStream
 import kotlin.io.path.outputStream
@@ -16,9 +15,8 @@ import kotlin.io.path.readBytes
 import kotlin.io.path.writeBytes
 
 internal class JvmSecureStorage(
-    private val storageDir: Path = Path(System.getProperty("user.home"), ".amber-messenger"),
+    private val storageDir: Path = Path.of(System.getProperty("user.home"), ".amber-messenger"),
 ) : SecureStorage {
-
     private val keystorePath = storageDir.resolve("auth.keystore")
     private val dataPath = storageDir.resolve("auth.dat")
     private val keystore: KeyStore = KeyStore.getInstance("PKCS12")

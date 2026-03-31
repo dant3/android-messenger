@@ -21,6 +21,9 @@ object DetektConfiguration {
             autoCorrect = shouldUseAutomaticCorrection
             config.setFrom("$rootDir/gradle/detekt.yml")
             parallel = shouldUseParallelAnalysis
+            source.setFrom(
+                fileTree("src") { include("*/kotlin/**/*.kt") },
+            )
         }
     }
 }

@@ -3,9 +3,9 @@ package amber.auth
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.koin.KoinExtension
 import io.kotest.matchers.types.shouldBeInstanceOf
+import kotlin.getValue
 import org.koin.test.KoinTest
 import org.koin.test.inject
-import kotlin.getValue
 
 class CoreAuthModuleTest : KoinTest, FunSpec() {
     init {

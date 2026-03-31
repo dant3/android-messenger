@@ -6,6 +6,7 @@ import coil3.decode.DecodeResult
 import coil3.decode.Decoder
 import coil3.fetch.SourceFetchResult
 import coil3.request.Options
+import io.ktor.client.request.invoke
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
@@ -13,6 +14,7 @@ import kotlinx.cinterop.alloc
 import kotlinx.cinterop.memScoped
 import kotlinx.cinterop.ptr
 import kotlinx.cinterop.usePinned
+import kotlinx.cinterop.value
 import org.jetbrains.skia.Bitmap
 import org.jetbrains.skia.Image as SkiaImage
 import platform.AVFoundation.AVAssetImageGenerator
@@ -27,7 +29,6 @@ import platform.posix.memcpy
 internal class IosVideoFrameDecoder(
     private val source: SourceFetchResult,
 ) : Decoder {
-
     override suspend fun decode(): DecodeResult {
         val filePath = source.source.file().toString()
         val pngBytes = extractFrameAsPng(filePath)
@@ -46,7 +47,7 @@ internal class IosVideoFrameDecoder(
     @OptIn(ExperimentalForeignApi::class, BetaInteropApi::class)
     private fun extractFrameAsPng(filePath: String): ByteArray = memScoped {
         val url = NSURL.fileURLWithPath(filePath)
-        val asset = AVURLAsset(URL = url, options = null)
+        val asset = AVURLAsset(url, options = null)
         val generator = AVAssetImageGenerator(asset = asset)
         generator.appliesPreferredTrackTransform = true
 

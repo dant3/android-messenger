@@ -6,17 +6,16 @@ import coil3.decode.DecodeResult
 import coil3.decode.Decoder
 import coil3.fetch.SourceFetchResult
 import coil3.request.Options
+import java.io.ByteArrayOutputStream
+import javax.imageio.ImageIO
 import org.bytedeco.javacv.FFmpegFrameGrabber
 import org.bytedeco.javacv.Java2DFrameConverter
 import org.jetbrains.skia.Bitmap
 import org.jetbrains.skia.Image as SkiaImage
-import java.io.ByteArrayOutputStream
-import javax.imageio.ImageIO
 
 internal class JvmVideoFrameDecoder(
     private val source: SourceFetchResult,
 ) : Decoder {
-
     override suspend fun decode(): DecodeResult {
         val filePath = source.source.file().toString()
         val pngBytes = extractFrameAsPng(filePath)

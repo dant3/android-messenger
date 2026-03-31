@@ -4,7 +4,8 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 val AppDatabaseModule: Module = module {
-    single {
+    includes(SqlDriverFactoryModule)
+    single<AppDatabase> {
         val factory: SqlDriverFactory = get()
         AppDatabase(factory.create(AppDatabase.Schema, "amber-messenger.db"))
     }

@@ -7,7 +7,7 @@ import coil3.annotation.DelicateCoilApi
 
 class ImageLoaderLifecycleComponent(
     private val imageLoader: ImageLoader,
-): LifecycleComponent {
+) : LifecycleComponent {
     @OptIn(DelicateCoilApi::class)
     override fun init() {
         SingletonImageLoader.setUnsafe(imageLoader)

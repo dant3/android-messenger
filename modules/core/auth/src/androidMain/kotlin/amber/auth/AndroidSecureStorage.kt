@@ -6,7 +6,6 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 
 internal class AndroidSecureStorage(context: Context) : SecureStorage {
-
     private val prefs: SharedPreferences = EncryptedSharedPreferences.create(
         PREFS_FILE_NAME,
         MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC),

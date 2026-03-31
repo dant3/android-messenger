@@ -28,7 +28,7 @@ object IosSimulatorTasks {
             workingDir(projectDir)
             commandLine(
                 "xcodebuild",
-                "-project", "${projectDir}/iosApp.xcodeproj",
+                "-workspace", "${projectDir}/iosApp.xcworkspace",
                 "-scheme", scheme.get(),
                 "-destination", "platform=iOS Simulator,name=${simulator.get()}",
                 "-derivedDataPath", derivedData.get().asFile.absolutePath,

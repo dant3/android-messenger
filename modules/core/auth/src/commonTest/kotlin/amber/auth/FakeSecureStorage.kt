@@ -1,7 +1,6 @@
 package amber.auth
 
 internal class FakeSecureStorage : SecureStorage {
-
     private val store = mutableMapOf<String, String>()
 
     override fun getString(key: String): String? = store[key]

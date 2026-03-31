@@ -115,6 +115,7 @@ paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazziVersion" }
 google-play-publisher = { id = "com.github.triplet.play", version.ref = "googlePlayPublisherPlugin" }
 rustore-publisher = { id = "ru.cian.rustore-publish-gradle-plugin", version.ref = "rustorePublisherPlugin" }
 huawei-publisher = { id = "ru.cian.huawei-publish-gradle-plugin", version.ref = "huaweiPublisherPlugin" }
+kotest = { id = "io.kotest", version.ref = "kotestVersion" }
 
 [libraries]
 protobuf-protoc = { module = "com.google.protobuf:protoc", version.ref = "protobufVersion" }

@@ -1,8 +1,9 @@
 package amber.database
 
 import org.koin.core.module.Module
+import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
-actual val CoreDatabaseModule: Module = module {
-    single { SqlDriverFactory(get()) }
+actual val SqlDriverFactoryModule: Module = module {
+    singleOf(::SqlDriverFactory)
 }

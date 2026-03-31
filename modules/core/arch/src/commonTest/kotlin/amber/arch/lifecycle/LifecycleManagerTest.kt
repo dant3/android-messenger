@@ -1,16 +1,17 @@
 package amber.arch.lifecycle
 
 import amber.arch.CoreArchModule
+import amber.arch.splash.SplashController
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.koin.KoinExtension
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.types.shouldBeInstanceOf
+import kotlin.getValue
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import org.koin.test.KoinTest
 import org.koin.test.inject
-import kotlin.getValue
 
 class LifecycleManagerTest : KoinTest, FunSpec() {
     private val callLog = mutableListOf<String>()
@@ -24,21 +25,21 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                     RecordingComponent(
                         "first",
                         InitPriority.MAX,
-                        callLog
+                        callLog,
                     )
                 }
                 lifecycleComponent(named("default")) {
                     RecordingComponent(
                         "default",
                         InitPriority.DEFAULT,
-                        callLog
+                        callLog,
                     )
                 }
                 lifecycleComponent(named("last")) {
                     RecordingComponent(
                         "last",
                         InitPriority.MIN,
-                        callLog
+                        callLog,
                     )
                 }
             }
@@ -59,7 +60,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
         }
         context("EmptyLifecycleManager") {
             test("works with no components registered") {
-                val empty = LifecycleManager(emptyList())
+                val empty = LifecycleManager(emptyList(), SplashController())
                 empty.init()
                 empty.dispose()
             }
@@ -74,6 +75,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
                         RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<RuntimeException> { manager.init() }
@@ -88,6 +90,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
                         FailingComponent(InitPriority.MIN, failOnInit = RuntimeException("last failed")),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<RuntimeException> { manager.init() }
@@ -106,6 +109,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         FailingComponent(InitPriority.DEFAULT, failOnDispose = error),
                         RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<RuntimeException> { manager.dispose() }
@@ -120,6 +124,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         RecordingComponent("default", InitPriority.DEFAULT, callLog),
                         FailingComponent(InitPriority.MIN, failOnDispose = RuntimeException("last failed")),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<RuntimeException> { manager.dispose() }
@@ -135,6 +140,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         FailingComponent(InitPriority.MAX, failOnInit = OutOfMemoryError("oom")),
                         RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<OutOfMemoryError> { manager.init() }
@@ -148,6 +154,7 @@ class LifecycleManagerTest : KoinTest, FunSpec() {
                         FailingComponent(InitPriority.MAX, failOnDispose = OutOfMemoryError("oom")),
                         RecordingComponent("last", InitPriority.MIN, callLog),
                     ),
+                    SplashController(),
                 )
 
                 val thrown = shouldThrowExactly<OutOfMemoryError> { manager.dispose() }

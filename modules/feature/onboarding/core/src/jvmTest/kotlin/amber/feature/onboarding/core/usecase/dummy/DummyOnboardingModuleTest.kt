@@ -10,9 +10,9 @@ import amber.feature.onboarding.core.usecase.SetPasswordUseCase
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.koin.KoinExtension
 import io.kotest.matchers.types.shouldBeInstanceOf
+import kotlin.getValue
 import org.koin.test.KoinTest
 import org.koin.test.inject
-import kotlin.getValue
 
 class DummyOnboardingModuleTest : KoinTest, FunSpec() {
     init {

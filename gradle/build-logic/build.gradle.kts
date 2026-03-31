@@ -23,6 +23,12 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        register("base") {
+            id = "amber.messenger.base"
+            implementationClass = "amber.messenger.gradle.conventions.plugin.BasePlugin"
+        }
+    }
+    plugins {
         register("kotlinLibrary") {
             id = "amber.messenger.kotlin"
             implementationClass = "amber.messenger.gradle.conventions.plugin.KotlinLibraryPlugin"

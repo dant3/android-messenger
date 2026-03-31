@@ -1,6 +1,8 @@
 plugins {
     id("amber.messenger.multiplatform")
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotest)
 }
 
 kotlin {
@@ -17,6 +19,6 @@ dependencies {
     androidMainImplementation(libs.androidx.security.crypto)
 
     commonTestImplementation(libs.bundles.testing.kotest)
-    jvmTestImplementation(libs.bundles.testing.junit5)
-    jvmTestImplementation(libs.bundles.testing.koin)
+    commonTestImplementation(libs.bundles.testing.koin)
+    jvmTestImplementation(libs.kotest.runner.junit5)
 }

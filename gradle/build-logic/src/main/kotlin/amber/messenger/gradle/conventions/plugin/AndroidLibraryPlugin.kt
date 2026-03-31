@@ -9,10 +9,10 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import amber.messenger.gradle.conventions.configuration.AndroidCommonConfiguration.configureAndroid
 import amber.messenger.gradle.conventions.configuration.DetektConfiguration.configureDetekt
 import amber.messenger.gradle.conventions.configuration.KotlinConfiguration.configureKotlin
-
 class AndroidLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply(BasePlugin::class.java)
             apply("org.jetbrains.kotlin.multiplatform")
             apply("com.android.library")
             apply("org.gradle.android.cache-fix")

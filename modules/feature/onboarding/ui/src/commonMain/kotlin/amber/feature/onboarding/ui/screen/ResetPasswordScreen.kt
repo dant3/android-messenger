@@ -29,7 +29,7 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun ResetPasswordScreen(
-    email: String,
+    @Suppress("UnusedParameter") email: String,
     state: OnboardingUiState,
     onCodeChange: (String) -> Unit,
     onNewPasswordChange: (String) -> Unit,

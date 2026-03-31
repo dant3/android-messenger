@@ -12,40 +12,47 @@ class LifecycleManager(
     private val log = logger {}
 
     suspend fun init() {
-        withContext(Dispatchers.Default) {
+        val failures = withContext(Dispatchers.Default) {
             runAll(components.sortedByDescending { it.priority }) {
                 log.verbose { "Running $it init" }
                 it.init()
             }
         }
+        throwCollected(failures)
         splashController.markReady()
     }
 
     suspend fun dispose() {
-        withContext(Dispatchers.Default) {
+        val failures = withContext(Dispatchers.Default) {
             runAll(components.sortedBy { it.priority }) {
                 log.verbose { "Running $it dispose" }
                 it.dispose()
             }
         }
+        throwCollected(failures)
     }
 
-    private suspend inline fun runAll(
+    private inline fun runAll(
         sortedComponentsList: List<LifecycleComponent>,
         action: (LifecycleComponent) -> Unit,
-    ) {
-        var firstFailure: Exception? = null
+    ): List<Exception> {
+        val failures = mutableListOf<Exception>()
         for (component in sortedComponentsList) {
             try {
                 action(component)
             } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
-                if (firstFailure == null) {
-                    firstFailure = e
-                } else {
-                    firstFailure.addSuppressed(e)
-                }
+                failures.add(e)
             }
         }
-        firstFailure?.let { throw it }
+        return failures
+    }
+
+    private fun throwCollected(failures: List<Exception>) {
+        if (failures.isEmpty()) return
+        val first = failures.first()
+        for (i in 1 until failures.size) {
+            first.addSuppressed(failures[i])
+        }
+        throw first
     }
 }

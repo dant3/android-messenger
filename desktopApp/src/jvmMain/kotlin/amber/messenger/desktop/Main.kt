@@ -9,11 +9,11 @@ import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.graphics.toComposeImageBitmap
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import java.awt.Taskbar
+import javax.imageio.ImageIO
 import org.jetbrains.skia.Image
 import org.koin.core.context.startKoin
 import org.koin.mp.KoinPlatform.getKoin
-import java.awt.Taskbar
-import javax.imageio.ImageIO
 
 private fun loadIcon(resourcePath: String): BitmapPainter {
     val bytes = Thread.currentThread().contextClassLoader

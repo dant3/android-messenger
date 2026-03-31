@@ -13,6 +13,7 @@ import amber.messenger.gradle.conventions.configuration.composeCompilerPluginId
 class DesktopApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply(BasePlugin::class.java)
             apply("org.jetbrains.kotlin.multiplatform")
             apply("org.jetbrains.compose")
             apply(composeCompilerPluginId)

@@ -13,9 +13,9 @@ import amber.modules.core.uikit.generated.resources.sample_avatar_09
 import amber.modules.core.uikit.generated.resources.sample_avatar_10
 import amber.modules.core.uikit.generated.resources.sample_avatar_11
 import amber.modules.core.uikit.generated.resources.sample_avatar_12
-import org.jetbrains.compose.resources.DrawableResource
 import kotlin.math.abs
 import kotlin.random.Random
+import org.jetbrains.compose.resources.DrawableResource
 
 object PreviewAvatars {
     val all: List<DrawableResource> = listOf(

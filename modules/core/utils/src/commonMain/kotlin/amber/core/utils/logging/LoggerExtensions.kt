@@ -1,6 +1,5 @@
 package amber.core.utils.logging
 
-import dev.shivathapaa.logger.api.Logger
 import dev.shivathapaa.logger.api.LoggerFactory
 import kotlin.reflect.KClass
 

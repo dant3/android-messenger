@@ -8,7 +8,6 @@ import kotlinx.serialization.json.Json
 internal class AuthManager(
     private val secureStorage: SecureStorage,
 ) : AuthTokenStorage, AuthStateProvider {
-
     private val json = Json { ignoreUnknownKeys = true }
 
     private val _authState = MutableStateFlow(loadAuthState())
