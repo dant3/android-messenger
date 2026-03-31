@@ -41,5 +41,4 @@ dependencies {
     commonMainImplementation(libs.koin.core)
 
     commonTestImplementation(libs.bundles.testing.kotest)
-    jvmTestImplementation(libs.kotest.runner.junit5)
 }

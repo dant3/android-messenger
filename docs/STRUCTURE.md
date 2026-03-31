@@ -14,22 +14,43 @@ All library modules live under `modules/`:
 
 ```
 modules/
-├── core/          — Core platform-agnostic libraries
-│   ├── arch/      — Architecture foundations (lifecycle management, Koin DI utilities)
-│   ├── database/  — Database infrastructure (SQLDelight setup, platform drivers)
-│   ├── uikit/     — Design system (theme, colors, typography, shared components)
-│   └── utils/     — Common utilities (logging)
-├── feature/       — Feature modules (business logic + UI)
-│   └── counter/
-│       ├── core/  — Counter business logic (state, store, Koin module)
-│       └── ui/    — Counter Compose screen
-└── ui/            — App-level UI (composes feature screens into the application UI)
+├── core/                — Core platform-agnostic libraries
+│   ├── analytics/       — Analytics infrastructure
+│   ├── arch/            — Architecture foundations (lifecycle management, Koin DI utilities)
+│   ├── auth/            — Authentication (secure token/profile storage, platform-native backends)
+│   ├── client/
+│   │   ├── api/         — Client API interfaces
+│   │   └── impl/        — Client implementation
+│   ├── database/        — Database infrastructure (SQLDelight setup, platform drivers)
+│   ├── firebase/        — Firebase integration
+│   ├── image-loading/   — Image loading (Coil 3)
+│   ├── logger/          — Logging infrastructure (SLF4J + kotlin-logging)
+│   ├── media-player/    — Media/video player (Compose)
+│   ├── navigation/      — Navigation infrastructure (Compose)
+│   ├── network-monitor/ — Network connectivity monitoring
+│   ├── power-monitor/   — Device power state monitoring
+│   ├── preferences/     — User preferences storage
+│   ├── uikit/           — Design system (theme, colors, typography, shared components)
+│   ├── utils/           — Common utilities (ID generation, base conversion)
+│   └── webrtc/          — WebRTC communication
+├── data/                — Data layer
+├── feature/             — Feature modules (business logic + UI)
+│   ├── counter/
+│   │   ├── core/        — Counter business logic (state, store, Koin module)
+│   │   └── ui/          — Counter Compose screen
+│   └── onboarding/
+│       ├── core/        — Onboarding business logic
+│       └── ui/          — Onboarding Compose screens
+├── runtime/             — Runtime infrastructure
+└── ui/                  — App-level UI (composes feature screens into the application UI)
 ```
 
 ### Module Categories
 
 - **core/** — Platform-agnostic business logic and infrastructure (DI, networking, persistence, design system, etc.)
+- **data/** — Data layer (repositories, data sources)
 - **feature/** — Feature modules, each split into `core` (logic) and `ui` (Compose screen)
+- **runtime/** — Runtime infrastructure
 - **ui/** — App-level Compose UI that assembles feature screens
 
 ## KMP Source Set Layout

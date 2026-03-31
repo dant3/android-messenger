@@ -4,5 +4,4 @@ plugins {
 
 dependencies {
     commonMainApi(libs.kmp.logger)
-    commonTestImplementation(libs.bundles.testing.kotest)
 }

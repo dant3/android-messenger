@@ -49,6 +49,7 @@ include(":androidApp")
 include(":desktopApp")
 include(":iosApp")
 
+include(":modules:data")
 include(":modules:core:arch")
 include(":modules:core:database")
 include(":modules:core:navigation")

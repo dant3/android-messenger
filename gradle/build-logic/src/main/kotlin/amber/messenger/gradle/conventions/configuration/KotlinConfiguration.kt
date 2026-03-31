@@ -31,6 +31,13 @@ object KotlinConfiguration {
             // see https://youtrack.jetbrains.com/issue/KT-48419
             "commonMainImplementation"(libs.findLibrary("kotlinx.coroutines.core").get())
         }
+
+        // kotest JUnit 5 runner is needed for all JVM tests; added lazily because jvm() target
+        // may be declared after configureKotlin() runs
+        val kotestRunner = libs.findLibrary("kotest.runner.junit5").get()
+        configurations.matching { it.name == "jvmTestImplementation" }.configureEach {
+            project.dependencies.add(name, kotestRunner)
+        }
     }
 
     private fun Project.configureJvmToolchain() {
